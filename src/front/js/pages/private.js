@@ -1,22 +1,21 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import secret from "../../img/secret.png"
 
 import { Context } from "../store/appContext";
 
 export const Private = () => {
 	const { store, actions } = useContext(Context);
+    const navigate = useNavigate();
 
     // useEffect(() => {
     //     actions.GetPrivateData([])
     // }, [])
 
     const handleClick = () => {
-        actions.LogoutUser()
-        .then((success)=> {if(success){
-            navigate("/home")
-        }})
-    }
+        actions.LogoutUser();
+        navigate("/home")
+        }
 
 	return (
 		<div className="container">
