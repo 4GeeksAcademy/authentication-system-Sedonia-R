@@ -31,9 +31,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 					}),
 				});
 				const body = await response.json();
-				// setStore({
-				// 	users: [...users, body.users]
-				// })
 				console.log('new contact created')
 				return 200;
 			},
@@ -59,25 +56,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 				return response.ok;
 			},
 
-			GetPrivateData: (username, password) => {
-				try {
-					for(let user of getStore().users) {
-						if(username == user.username){
-							// setStore({
-							// 	currentUser: user
-							// })
-							console.log("Hey, I grabbed the user!")
-						}
-					}
-				} catch (error) {
-					console.log("There was an error", error)
-				}
-			},
-
 			LogoutUser: () => {
 				try {
 					setStore({
-						"token": undefined
+						"token": undefined,
+						"currentUser": undefined,
 					})
 				} catch (error) {
 					console.log("There was an error", error)

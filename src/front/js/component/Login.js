@@ -1,9 +1,7 @@
-import React, { useContext } from 'react';
-import { useActionData, useNavigate } from "react-router-dom";
-import { Context } from '../store/appContext';
+import React from 'react';
+import { useNavigate } from "react-router-dom";
 
-export const LoginButton = ({user}) => {
-    const {store, actions} = useContext(Context);
+export const LoginButton = () => {
     const navigate = useNavigate();
 
     return (

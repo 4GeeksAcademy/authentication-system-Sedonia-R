@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import secret from "../../img/secret.png"
 
@@ -7,10 +7,6 @@ import { Context } from "../store/appContext";
 export const Private = () => {
 	const { store, actions } = useContext(Context);
     const navigate = useNavigate();
-
-    // useEffect(() => {
-    //     actions.GetPrivateData([])
-    // }, [])
 
     const handleClick = () => {
         actions.LogoutUser();

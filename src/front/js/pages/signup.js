@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Link, getState, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Context } from "../store/appContext";
 import hercules from "../../img/hercules.png"
 

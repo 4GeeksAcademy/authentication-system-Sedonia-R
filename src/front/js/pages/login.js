@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Link, getState, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Context } from "../store/appContext";
 import hopper from "../../img/hopper.png"
 
@@ -8,7 +8,6 @@ export const LoginUser = () => {
     const [ state, setState ] = useState({
         username: "",
         password: "",
-        // token: "",
     });
 
     const navigate = useNavigate();
@@ -21,10 +20,6 @@ export const LoginUser = () => {
       }
 
     const handleClick = () => {
-        actions.GetPrivateData(
-            state.username, 
-            state.password,
-        )
         actions.LoginUser(
             state.username, 
             state.password, 
